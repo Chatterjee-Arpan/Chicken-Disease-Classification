@@ -1,0 +1,62 @@
+# %% [code] {"jupyter":{"outputs_hidden":false},"execution":{"iopub.status.busy":"2025-07-08T16:43:08.810316Z","iopub.execute_input":"2025-07-08T16:43:08.810626Z","iopub.status.idle":"2025-07-08T16:43:08.822164Z","shell.execute_reply.started":"2025-07-08T16:43:08.810602Z","shell.execute_reply":"2025-07-08T16:43:08.821464Z"}}
+# This Python 3 environment comes with many helpful analytics libraries installed
+# It is defined by the kaggle/python Docker image: https://github.com/kaggle/docker-python
+# For example, here's several helpful packages to load
+
+import numpy as np # linear algebra
+import pandas as pd # data processing, CSV file I/O (e.g. pd.read_csv)
+
+# Input data files are available in the read-only "../input/" directory
+# For example, running this (by clicking run or pressing Shift+Enter) will list all files under the input directory
+
+import os
+for dirname, _, filenames in os.walk('/kaggle/input'):
+    for filename in filenames:
+        print(os.path.join(dirname, filename))
+
+# You can write up to 20GB to the current directory (/kaggle/working/) that gets preserved as output when you create a version using "Save & Run All" 
+# You can also write temporary files to /kaggle/temp/, but they won't be saved outside of the current session
+
+from pathlib import Path
+import logging
+
+logging.basicConfig(level=logging.INFO, format='[%(asctime)s]: %(message)s:')
+
+project_name = "Chicken-Disease"
+
+list_of_files = [
+    ".github/workflows/.gitkeep",
+    f"src/{project_name}/__init__.py",
+    f"src/{project_name}/components/__init__.py",
+    f"src/{project_name}/utils/__init__.py",
+    f"src/{project_name}/config/__init__.py",
+    f"src/{project_name}/config/configuration.py"
+    f"src/{project_name}/pipeline/__init__.py",
+    f"src/{project_name}/entity/__init__.py",
+    f"src/{project_name}/constants/__init__.py",
+    "config/config.yaml",
+    "dvc.yaml",
+    "params.yaml",
+    "requirements.txt",
+    "setup.py",
+    "research/trials.ipynb"
+]
+
+
+for filepath in list_of_files:
+    filepath = Path(filepath) #For Forward slash and Backward slash discrepency management
+    filedir, filename = os.path.split(filepath)
+
+
+    if filedir !="":
+        os.makedirs(filedir, exist_ok=True)
+        logging.info(f"Creating directory; {filedir} for the file: {filename}")
+
+
+    if (not os.path.exists(filepath)) or (os.path.getsize(filepath)==0):
+        with open(filepath, 'w') as f:
+            pass
+            logging.info(f"Creating empty file: {filepath}")
+
+    else:
+        logging.info(f"{filename} already exists")
