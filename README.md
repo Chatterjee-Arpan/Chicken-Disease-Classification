@@ -89,11 +89,12 @@ open up you local host and port
 
 	2. AmazonEC2FullAccess
 
+## 3. Create ECR repo to store/save docker image
+    - Save the URI	
 	
-	
-## 3. Create EC2 machine (Ubuntu) 
+## 4. Create EC2 machine (Ubuntu) 
 
-## 4. Open EC2 and Install docker in EC2 Machine:
+## 5. Open EC2 and Install docker in EC2 Machine:
 	
 	
 	#optinal
@@ -112,11 +113,11 @@ open up you local host and port
 
 	newgrp docker
 	
-# 5. Configure EC2 as self-hosted runner:
+# 6. Configure EC2 as self-hosted runner:
     setting>actions>runner>new self hosted runner> choose os> then run command one by one
 
 
-# 6. Setup github secrets:
+# 7. Setup github secrets:
 
     AWS_ACCESS_KEY_ID=
 
@@ -124,9 +125,9 @@ open up you local host and port
 
     AWS_REGION = us-east-1
 
-    AWS_ECR_LOGIN_URI = demo>>
+    AWS_ECR_LOGIN_URI = saved URI from step 3 (till ".com")
 
-    ECR_REPOSITORY_NAME = simple-app
+    ECR_REPOSITORY_NAME = name of the ECR repo (after ".com/" from the ECR_LOGIN_URI)
 
 # AZURE-CICD-Deployment-with-Github-Actions
 
