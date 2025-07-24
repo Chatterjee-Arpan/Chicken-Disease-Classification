@@ -1,6 +1,6 @@
-FROM python:3.8-slim-buster
+FROM python:3.8-slim-bullseye
 
-ENV DEBIAN_FRONTEND=noninteractive
+# ENV DEBIAN_FRONTEND=noninteractive
 RUN apt-get update -y && apt-get install -y --no-install-recommends awscli && rm -rf /var/lib/apt/lists/*
 WORKDIR /app
 
