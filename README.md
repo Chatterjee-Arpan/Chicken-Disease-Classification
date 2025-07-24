@@ -91,9 +91,9 @@ open up you local host and port
 
 	
 	
-## 4. Create EC2 machine (Ubuntu) 
+## 3. Create EC2 machine (Ubuntu) 
 
-## 5. Open EC2 and Install docker in EC2 Machine:
+## 4. Open EC2 and Install docker in EC2 Machine:
 	
 	
 	#optinal
@@ -112,11 +112,11 @@ open up you local host and port
 
 	newgrp docker
 	
-# 6. Configure EC2 as self-hosted runner:
+# 5. Configure EC2 as self-hosted runner:
     setting>actions>runner>new self hosted runner> choose os> then run command one by one
 
 
-# 7. Setup github secrets:
+# 6. Setup github secrets:
 
     AWS_ACCESS_KEY_ID=
 
